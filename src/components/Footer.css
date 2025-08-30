@@ -1,0 +1,370 @@
+.footer {
+  position: relative;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 80px 0 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.footer-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 140, 0, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 200, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 40% 90%, rgba(255, 140, 0, 0.02) 0%, transparent 50%);
+}
+
+.lightning-effects {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(45deg, transparent 40%, rgba(255, 140, 0, 0.05) 41%, rgba(255, 140, 0, 0.05) 43%, transparent 44%),
+    linear-gradient(-45deg, transparent 40%, rgba(255, 200, 0, 0.03) 41%, rgba(255, 200, 0, 0.03) 43%, transparent 44%);
+  animation: lightning-pulse 4s ease-in-out infinite;
+}
+
+@keyframes lightning-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Shape layer for Zenitsu */
+.footer-shape {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 60px;
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 200, 0, 0.05) 100%);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 140, 0, 0.3);
+  box-shadow: 
+    0 0 50px rgba(255, 140, 0, 0.2),
+    inset 0 0 50px rgba(255, 140, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-shape::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff8c00, #ffa500, #ffcc00, #ff8c00);
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate-border 3s linear infinite;
+}
+
+@keyframes rotate-border {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.zenitsu-container {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zenitsu-image {
+  width: 400px;
+  height: auto;
+  filter: 
+    drop-shadow(0 0 20px rgba(255, 140, 0, 0.5))
+    brightness(1.1)
+    contrast(1.1);
+  transition: all 0.3s ease;
+}
+
+.zenitsu-image:hover {
+  transform: scale(1.05);
+}
+
+.electric-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+  animation: electric-pulse 2s ease-in-out infinite;
+}
+
+@keyframes electric-pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+/* Footer Content */
+.footer-content {
+  color: #ffffff;
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff8c00;
+  margin-bottom: 16px;
+  text-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+  line-height: 1.2;
+}
+
+.footer-subtitle {
+  font-size: 1.2rem;
+  color: #cccccc;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 140, 0, 0.1);
+  border: 2px solid rgba(255, 140, 0, 0.3);
+  border-radius: 50%;
+  color: #ff8c00;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 140, 0, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.social-link:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.social-link:hover {
+  border-color: #ff8c00;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+.footer-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-column h4 {
+  color: #ff8c00;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-column li {
+  margin-bottom: 12px;
+}
+
+.nav-column a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-column a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #ff8c00;
+  transition: width 0.3s ease;
+}
+
+.nav-column a:hover {
+  color: #ff8c00;
+  transform: translateX(5px);
+}
+
+.nav-column a:hover::after {
+  width: 100%;
+}
+
+.footer-bottom {
+  padding-top: 30px;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 140, 0, 0.3), transparent);
+  margin-bottom: 30px;
+}
+
+.footer-credits {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  font-size: 0.9rem;
+  color: #888888;
+}
+
+.footer-credits p {
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 0 0;
+  }
+  
+  .footer-shape {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 40px;
+  }
+  
+  .zenitsu-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .zenitsu-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .footer-title {
+    font-size: 2rem;
+  }
+  
+  .footer-subtitle {
+    font-size: 1rem;
+  }
+  
+  .footer-nav {
+    gap: 30px;
+  }
+  
+  .footer-credits {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 0 15px;
+  }
+  
+  .footer-shape {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .zenitsu-container {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .zenitsu-image {
+    width: 120px;
+    height: auto;
+  }
+  
+  .footer-title {
+    font-size: 1.8rem;
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+}

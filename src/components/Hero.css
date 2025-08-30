@@ -1,0 +1,766 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: #1a1a1a;
+  overflow: hidden;
+}
+
+.hero-content {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  max-width: 900px;
+  padding: 0 2rem;
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  position: relative;
+  line-height: 1.1;
+}
+
+.footer-shape-hero {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ffcc20;
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  background: #020202;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.zenitsu-image-hero {
+  width: 30vw;
+  height: auto;
+}
+
+.hero-title .highlight {
+  color: #ff8c00;
+  position: relative;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+
+/* Electric Aura Styles */
+.electric-aura {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 0, 0.3) 0%,
+    rgba(255, 165, 0, 0.2) 30%,
+    rgba(255, 140, 0, 0.1) 60%,
+    transparent 80%
+  );
+  z-index: -1;
+  pointer-events: none;
+}
+
+.zenitsu-container-hero {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-logo {
+  margin-bottom: 2rem;
+}
+
+.hero-logo-image {
+  width: 200px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn.primary {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.hero-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+}
+
+.hero-btn.secondary:hover {
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.hero-btn:hover::before {
+  left: 100%;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.zenitsu-emblem {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sword-container {
+  position: relative;
+  z-index: 3;
+  animation: sword-glow 3s ease-in-out infinite;
+}
+
+.katana-blade {
+  width: 4px;
+  height: 200px;
+  background: linear-gradient(to bottom, #E6E6FA 0%, #C0C0C0 50%, #A9A9A9 100%);
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    inset 1px 0 0 rgba(255, 255, 255, 0.8);
+}
+
+.katana-blade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, #FFFFFF, transparent);
+  animation: blade-shine 2s ease-in-out infinite;
+}
+
+.katana-handle {
+  width: 12px;
+  height: 80px;
+  background: linear-gradient(45deg, #8B4513, #A0522D, #CD853F);
+  border-radius: 6px;
+  margin-top: -5px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+}
+
+.katana-handle::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #FFD700;
+}
+
+.lightning-aura {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: 
+    radial-gradient(ellipse at 30% 40%, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(255, 165, 0, 0.2) 0%, transparent 40%);
+  animation: aura-pulse 2.5s ease-in-out infinite;
+}
+
+.breathing-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: pattern-rotate 8s linear infinite;
+}
+
+.pattern-triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid rgba(255, 215, 0, 0.4);
+  position: absolute;
+  animation: triangle-flash 3s ease-in-out infinite;
+}
+
+.pattern-triangle:nth-child(1) {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  animation-delay: 0s;
+}
+
+.pattern-triangle:nth-child(2) {
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%) rotate(120deg);
+  animation-delay: 1s;
+}
+
+.pattern-triangle:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  transform: rotate(240deg);
+  animation-delay: 2s;
+}
+
+@keyframes sword-glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes blade-shine {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes aura-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pattern-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes triangle-flash {
+  0%, 90%, 100% {
+    opacity: 0.4;
+  }
+  5%, 10% {
+    opacity: 1;
+    border-bottom-color: #FFD700;
+    box-shadow: 0 0 15px #FFD700;
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.scroll-arrow {
+  width: 2px;
+  height: 30px;
+  background: #FFD700;
+  position: relative;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+  transform: rotate(45deg);
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .zenitsu-emblem {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .katana-blade {
+    height: 150px;
+  }
+  
+  .katana-handle {
+    height: 60px;
+  }
+}
+
+/* aaaaaaaaaaaaaaaa */
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text {
+  z-index: 3;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.title-line.typing-complete::after {
+  display: none;
+}
+
+.title-line {
+  display: block;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+  animation: title-glow 3s ease-in-out infinite;
+}
+
+.title-line:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+@keyframes title-glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+    text-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+  }
+}
+
+.hero-description {
+  font-size: 1.3rem;
+  color: #ccc;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.hero-btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn.primary {
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #1a1a1a;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.hero-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+.hero-btn.secondary {
+  background: transparent;
+  color: #FFD700;
+  border: 2px solid #FFD700;
+}
+
+.hero-btn.secondary:hover {
+  background: rgba(255, 215, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.2);
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.hero-btn:hover::before {
+  left: 100%;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.zenitsu-emblem {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sword-container {
+  position: relative;
+  z-index: 3;
+  animation: sword-glow 3s ease-in-out infinite;
+}
+
+.katana-blade {
+  width: 4px;
+  margin-left: 3.5px;
+  height: 200px;
+  background: linear-gradient(to bottom, #E6E6FA 0%, #C0C0C0 50%, #A9A9A9 100%);
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    inset 1px 0 0 rgba(255, 255, 255, 0.8);
+}
+
+.katana-blade::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, #FFFFFF, transparent);
+  animation: blade-shine 2s ease-in-out infinite;
+}
+
+.katana-handle {
+  width: 12px;
+  height: 80px;
+  background: linear-gradient(45deg, #8B4513, #A0522D, #CD853F);
+  border-radius: 6px;
+  margin-top: -5px;
+  position: relative;
+  box-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+}
+
+.katana-handle::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 4px;
+  background: #FFD700;
+  border-radius: 2px;
+  box-shadow: 0 0 5px #FFD700;
+}
+
+.lightning-aura {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: 
+    radial-gradient(ellipse at 30% 40%, rgba(255, 215, 0, 0.3) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(255, 165, 0, 0.2) 0%, transparent 40%);
+  animation: aura-pulse 2.5s ease-in-out infinite;
+}
+
+.breathing-pattern {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  animation: pattern-rotate 8s linear infinite;
+}
+
+.pattern-triangle {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid rgba(255, 215, 0, 0.4);
+  position: absolute;
+  animation: triangle-flash 3s ease-in-out infinite;
+}
+
+.pattern-triangle:nth-child(1) {
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  animation-delay: 0s;
+}
+
+.pattern-triangle:nth-child(2) {
+  top: 50%;
+  right: 20%;
+  transform: translateY(-50%) rotate(120deg);
+  animation-delay: 1s;
+}
+
+.pattern-triangle:nth-child(3) {
+  bottom: 20%;
+  left: 20%;
+  transform: rotate(240deg);
+  animation-delay: 2s;
+}
+
+@keyframes sword-glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.3);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes blade-shine {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+}
+
+@keyframes aura-pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pattern-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes triangle-flash {
+  0%, 90%, 100% {
+    opacity: 0.4;
+  }
+  5%, 10% {
+    opacity: 1;
+    border-bottom-color: #FFD700;
+    box-shadow: 0 0 15px #FFD700;
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.scroll-arrow {
+  width: 2px;
+  height: 30px;
+  background: #FFD700;
+  position: relative;
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #FFD700;
+  border-bottom: 2px solid #FFD700;
+  transform: rotate(45deg);
+}
+
+@keyframes scroll-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .zenitsu-emblem {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .katana-blade {
+    height: 150px;
+  }
+  
+  .katana-handle {
+    height: 60px;
+  }
+}
+
